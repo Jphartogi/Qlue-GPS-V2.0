@@ -1,0 +1,19 @@
+GPS:
+    time_to_update: 0.3 # every x seconds the GPS will update its position
+
+
+SIM:
+
+    ServerIP : 'traccar.qlue.id'
+    Port : '5001'
+    PhoneNum : '+6281310847177'
+    IMEI : '1234567890'
+    distance_to_update: 5 # every x meter the GPS will update its position
+    heartbeat_duration: 60 # update heartbeat every x seconds
+
+WEBCAM:
+
+    Protocol : 'TCP'
+    ServerIP : '52.20.16.20'
+    Port : '30000'
+
