@@ -7,7 +7,7 @@ the needs of the project.
 ## To Run
 to run just simply
 ```python3
-python3 /to/your/workspace GPS.py
+python3 /to/your/workspace main.py
 ```
 
 # Configuration
