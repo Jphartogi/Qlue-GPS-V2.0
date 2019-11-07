@@ -1,5 +1,6 @@
+
 GPS:
-    time_to_update: 0.3 # every x seconds the GPS will update its position
+    time_to_update: 0.1 # every x seconds the GPS will update its position
 
 
 SIM:
@@ -9,7 +10,7 @@ SIM:
     PhoneNum : '+6281310847177'
     IMEI : '1234567890'
     distance_to_update: 5 # every x meter the GPS will update its position
-    heartbeat_duration: 60 # update heartbeat every x seconds
+    heartbeat_duration: 20 # update heartbeat every x seconds
 
 WEBCAM:
 

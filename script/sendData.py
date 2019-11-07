@@ -52,13 +52,33 @@ class sendData:
         
         self.URL = 'traccar.qlue.id'
         self.port = 5001
+        while True:
+            status = self.is_connected()
+            if status == False:
+                print('there is no internet connection')
+                pass
+            elif status == True:
+                print('Got Internet Connection!')
+                break
         self.so = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+       
         self.connect()
+                         
         
     def connect(self):
 
-        self.so.connect((self.URL, self.port))
-        return self.so
+        a = self.so.connect((self.URL, self.port))
+        return a
+
+    def is_connected(self):
+        try:
+            # connect to the host -- tells us if the host is actually
+            # reachable
+            socket.create_connection(("www.google.com", 80),2)
+            return True
+        except OSError:
+            pass
+        return False
 
 
     def login(self):
@@ -89,7 +109,13 @@ class sendData:
             if hb_counter > heartbeat_duration:
                 hb_counter = 0
                 
-        
+        	#checking internet 
+                status = False
+                while status == False:
+                    status = self.is_connected()
+                    print('no internet connection, trying ....')
+                print('got internet connection, sending heartbeat!')
+                		
                 self.so.send(messages.encode('utf-8'))
                 print('messagenya:',messages)
 
@@ -128,6 +154,12 @@ class sendData:
         new_distance = new_distance + distance
         print('distance is: ',new_distance)
         if new_distance > distance_threshold or distance > distance_threshold:
+        #checking internet 
+            status = False
+            while status == False:
+                status = self.is_connected()
+                print('no internet connection, trying ....')
+            print('got internet connection, sending location!')
             print("now sending message")
             new_distance = 0 # reseting the distance counter
             self.so.send(messages.encode('utf-8'))
@@ -151,3 +183,4 @@ class sendData:
 
 
   
+
