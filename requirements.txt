@@ -1,0 +1,4 @@
+RPi.GPIO>=0.7.0
+pyserial>=3.4
+multiprocess>=0.70.9
+PyYAML>=5.1.2

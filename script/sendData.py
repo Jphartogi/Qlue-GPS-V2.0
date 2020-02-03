@@ -15,7 +15,7 @@ import CALCULATION as calc
 
 
 ## obtain data from the config.yaml file
-with open("config.yaml", 'r') as stream:
+with open("/app/script/config.yaml", 'r') as stream:
     try:
         data = yaml.safe_load(stream)
         sim_data = data['SIM']

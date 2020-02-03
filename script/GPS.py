@@ -14,7 +14,7 @@ ser = serial.Serial('/dev/ttyS0',115200)
 ser.flushInput()
 
 ## obtain data from the config.yaml file
-with open("config.yaml", 'r') as stream:
+with open("/app/script/config.yaml", 'r') as stream:
     try:
         data = yaml.safe_load(stream)
         GPS_data = data['GPS']
