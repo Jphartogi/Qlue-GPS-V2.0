@@ -1,0 +1,10 @@
+version: "2"
+
+services:
+  GPS:
+    image: qlue-gps-tracker:2.0
+    build: .
+    volumes:
+      - .:/usr/src/app
+      - /dev:/dev
+    privileged: true
